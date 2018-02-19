@@ -6,10 +6,7 @@
 		.shape {
 			height: 100px;
 			width: 100px;
-			background-color: #555;
 			position: relative;
-			margin-left: 100px;
-			margin-top: 200px;
 		}
 	</style>
 </head>
@@ -26,7 +23,8 @@
 		document.getElementById('div_shape').style.display = 'none';
 		document.getElementById('btn').onclick = function() {
 			document.getElementById('btn').style.display = 'none';
-			setTimeout(tryi,Math.random()*1000)
+			setTimeout(tryi,Math.random()*100)
+			randomize();
 			document.getElementById('div_shape').style.display = 'block';
 			start = new Date().getTime();
 		}
@@ -35,14 +33,29 @@
 			end = new Date().getTime();
 			document.getElementById('para').innerHTML = "Your Response Time = " + (end-start)/1000 + " Seconds";
 			document.getElementById('para').style.display = 'block';
-			console.log("Hello There");
-			setTimeout(tryi,Math.random()*1000);
-			//document.getElementById('div_shape').style.display = 'block';
+			setTimeout(tryi,Math.random()*100);
 			start = new Date().getTime();			
 		}
-		function tryi()
-		{
+		function tryi(){
+			randomize();
 			document.getElementById('div_shape').style.display = 'block';
+		}
+		function randomize(){
+			var color='#';
+			var array="0123456789ABCDEF";
+			array = array.split('');
+			for (var i = 1; i <= 6; i++){
+				color += array[Math.floor(Math.random() * array.length)];
+			}
+			document.getElementById('div_shape').style.background = color;
+			var rnd = Math.floor(Math.random() * Math.pow(10,Math.floor(Math.random()*10)));
+			rnd += 'px';
+			console.log(rnd);
+			document.getElementById('div_shape').style.marginleft = rnd;
+			rnd = Math.floor(Math.random() * Math.pow(10,Math.floor(Math.random()*10)));
+			rnd += 'px';
+			document.getElementById('div_shape').style.margintop = Math.random() * 100;
+
 		}
 	</script>
 </body>
