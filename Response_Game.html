@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Response Time Test</title>
+	<style type="text/css">
+		.shape {
+			height: 100px;
+			width: 100px;
+			background-color: #555;
+			position: relative;
+			margin-left: 100px;
+			margin-top: 200px;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<h1> Test Your Response Time </h1>
+		<button id='btn'>Start</button>
+		<p id='para'>Your Response Time = -</p>
+	</center>
+	<div class="shape" id='div_shape'></div>
+	<script type="text/javascript">
+		var start,end;
+		document.getElementById('para').style.display = 'none';
+		document.getElementById('div_shape').style.display = 'none';
+		document.getElementById('btn').onclick = function() {
+			document.getElementById('btn').style.display = 'none';
+			setTimeout(tryi,Math.random()*1000)
+			document.getElementById('div_shape').style.display = 'block';
+			start = new Date().getTime();
+		}
+		document.getElementById('div_shape').onclick = function() {
+			document.getElementById('div_shape').style.display = 'none';
+			end = new Date().getTime();
+			document.getElementById('para').innerHTML = "Your Response Time = " + (end-start)/1000 + " Seconds";
+			document.getElementById('para').style.display = 'block';
+			console.log("Hello There");
+			setTimeout(tryi,Math.random()*1000);
+			//document.getElementById('div_shape').style.display = 'block';
+			start = new Date().getTime();			
+		}
+		function tryi()
+		{
+			document.getElementById('div_shape').style.display = 'block';
+		}
+	</script>
+</body>
+</html>
