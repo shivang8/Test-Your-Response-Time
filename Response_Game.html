@@ -24,7 +24,6 @@
 		document.getElementById('btn').onclick = function() {
 			document.getElementById('btn').style.display = 'none';
 			setTimeout(tryi,Math.random()*100)
-			randomize();
 			document.getElementById('div_shape').style.display = 'block';
 			start = new Date().getTime();
 		}
@@ -48,10 +47,10 @@
 				color += array[Math.floor(Math.random() * array.length)];
 			}
 			document.getElementById('div_shape').style.background = color;
-			var rnd = Math.floor(Math.random() * Math.pow(10,Math.floor(Math.random()*10)));
-			rnd += 'px';
+			var rnd = Math.floor(Math.random() * 101);
+			//rnd += 'px';
 			console.log(rnd);
-			document.getElementById('div_shape').style.marginleft = rnd;
+			document.getElementById('div_shape').style.marginleft = rnd+"px";
 			rnd = Math.floor(Math.random() * Math.pow(10,Math.floor(Math.random()*10)));
 			rnd += 'px';
 			document.getElementById('div_shape').style.margintop = Math.random() * 100;
