@@ -47,14 +47,14 @@
 				color += array[Math.floor(Math.random() * array.length)];
 			}
 			document.getElementById('div_shape').style.background = color;
-			var rnd = Math.floor(Math.random() * 101);
-			//rnd += 'px';
-			console.log(rnd);
-			document.getElementById('div_shape').style.marginleft = rnd+"px";
-			rnd = Math.floor(Math.random() * Math.pow(10,Math.floor(Math.random()*10)));
-			rnd += 'px';
-			document.getElementById('div_shape').style.margintop = Math.random() * 100;
-
+			var rnd = Math.floor(Math.random() * 1001 + 50);
+			//console.log(rnd);
+			document.getElementById('div_shape').style.marginLeft = rnd+"px";
+			rnd = Math.floor(Math.random() * 501);
+			document.getElementById('div_shape').style.marginTop = rnd+"px";
+			rnd = Math.floor(Math.random() * 100 + 50);
+			document.getElementById('div_shape').style.width = rnd+"px";
+			document.getElementById('div_shape').style.height = rnd+"px";
 		}
 	</script>
 </body>
